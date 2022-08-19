@@ -23,7 +23,7 @@ class EloquentormSeeder extends Seeder
 
         //Using Model Factories
         Eloquentorm::factory()
-        ->count(5000)
+        ->count(50)
         ->create();
         //Using Model Factories End
 
