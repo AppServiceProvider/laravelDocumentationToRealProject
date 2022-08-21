@@ -22,7 +22,10 @@
     <body >
     <div class="container"> 
         <h1 class="text-center">Cache Retrieve & Store</h1>   
-        <table class="table">
+        <button><a href="{{route('sendNotification') }}">Send All Users Email</a></button>
+        {{-- <button><a href="{{url('send-notification')}}">Send All Users Email</a></button> --}}
+
+        {{-- <table class="table">
             <thead>
               <tr>
                 <th scope="col">serial</th>
@@ -40,7 +43,7 @@
               </tr>
               @endforeach
             </tbody>
-          </table>
+          </table> --}}
     </div>
           
     </body>

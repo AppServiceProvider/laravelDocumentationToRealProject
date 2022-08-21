@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Eloquentorm;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
+use App\Notifications\EmailNotification;
+use Illuminate\Support\Facades\Notification;
 
 class EloquentormController extends Controller
 {
@@ -36,4 +39,33 @@ class EloquentormController extends Controller
         });
         return view('welcome',['customer'=>$customer]);
     }
+
+    // Using The Notifiable Trait
+    //single mail notify 
+    // function sendNotificationController(){
+    //     $customer= Eloquentorm::find(4);
+    //     $customer->notify(new EmailNotification());
+    //     return redirect()->back();
+    // }
+
+
+    // single mail Notification facade
+    // function sendNotificationController(){
+    //     $customer= Eloquentorm::find(1);
+    //      Notification::send($customer, new EmailNotification());
+    //     return redirect()->back();
+    // }
+
+
+    // Multiple mail Notification facade/ 60 second time out mail notification
+    function sendNotificationController(){
+        $customer = Eloquentorm::all();
+        foreach($customer as $value){
+           Notification::send($value, new EmailNotification()); 
+        }
+        return redirect()->back();
+    }
+
+
 }
+
