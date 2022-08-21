@@ -22,7 +22,7 @@
     <body >
     <div class="container"> 
         <h1 class="text-center">Cache Retrieve & Store</h1>   
-        {{-- <table class="table">
+        <table class="table">
             <thead>
               <tr>
                 <th scope="col">serial</th>
@@ -40,7 +40,9 @@
               </tr>
               @endforeach
             </tbody>
-          </table> --}}
+          </table>
+          {{ $customer->links() }}
+
     </div>
           
     </body>
