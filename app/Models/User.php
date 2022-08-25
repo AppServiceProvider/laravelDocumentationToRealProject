@@ -12,6 +12,14 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+
+    // Accessor and Mutator
+    function getNameAttribute($value){
+        return ucfirst($value);
+    }
+    // Accessor and Mutator
+
+
     /**
      * The attributes that are mass assignable.
      *
