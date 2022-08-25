@@ -11,11 +11,12 @@ use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
-
+    // public $timestamps= false;
 
     // Accessor and Mutator
     function getNameAttribute($value){
-        return ucfirst($value);
+        // return ucfirst($value);
+        return "user " .$value;
     }
     // Accessor and Mutator
 
