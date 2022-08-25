@@ -9,7 +9,7 @@ class Customer extends Model
 {
     use HasFactory;
 
-    public function moblie()
+    public function mobile()
     {
         return $this->hasOne(Mobile::class);
     }
