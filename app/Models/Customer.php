@@ -13,4 +13,7 @@ class Customer extends Model
     {
         return $this->hasOne(Mobile::class);
     }
+    function getNameAttribute($value){
+        return ucfirst($value);
+    }
 }
