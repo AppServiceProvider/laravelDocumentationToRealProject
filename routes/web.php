@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\{AuthorController, AuthorpostController, IndexController};
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/add_author',[AuthorController::class, 'add_author']);
+Route::get('/add-post/{id}',[AuthorpostController::class, 'add_post']);
+
+
+Route::get('/show-post/{id}',[AuthorpostController::class, 'show_post']);
+
+// Show Author all data 
+Route::get('/show-all-data/{id}',[IndexController::class, 'index']);
